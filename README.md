@@ -6,8 +6,10 @@ PJCiOSApp is a UIKit-based iOS starter app using an MVVM architecture.
 
 - `Application`: app environment, dependency container, and navigation coordinator.
 - `Core`: shared platform foundations such as binding, logging, networking, and persistence.
-- `Features`: user-facing modules. Each feature owns its view controller and view model.
+- `Features`: user-facing modules. Each module is split into `Model`, `View`, `Controller`, and `ViewModel`.
 - `Shared`: reusable UI components and validation utilities.
+
+See `Docs/Architecture.md` for the module rules and `Docs/FeatureModuleTemplate.md` when adding a new feature.
 
 ## Development
 
