@@ -1,6 +1,6 @@
 # Swift 6 Migration Notes
 
-PJCiOSApp currently builds in Swift 5 mode with strict concurrency checking enabled.
+PJCiOSApp currently builds in Swift 5 language mode (`SWIFT_VERSION = 5.0` in Xcode build settings) with strict concurrency checking enabled. Treat Swift 5.9+ as the source compatibility baseline while keeping the project ready for a future Swift 6 language mode switch.
 
 Keep new code migration-ready by following these rules:
 

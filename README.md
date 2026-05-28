@@ -14,7 +14,7 @@ See `Docs/Architecture.md` for the module rules, `Docs/FeatureModuleTemplate.md`
 ## Development
 
 Open `PJCiOSApp.xcodeproj` in Xcode 26 or later. The minimum supported system is iOS 18.0.
-The project remains on Swift 5 mode, with concurrency boundaries annotated to keep a future Swift 6 migration straightforward.
+The project remains on Swift 5 language mode (`SWIFT_VERSION = 5.0` in Xcode build settings), with code kept compatible with a Swift 5.9+ baseline and concurrency boundaries annotated to keep a future Swift 6 migration straightforward.
 
 ```bash
 xcodebuild -project PJCiOSApp.xcodeproj -scheme PJCiOSApp -destination 'platform=iOS Simulator,name=iPhone 17' test
