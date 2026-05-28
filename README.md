@@ -9,11 +9,12 @@ PJCiOSApp is a UIKit-based iOS starter app using an MVVM architecture.
 - `Features`: user-facing modules. Each module is split into `Model`, `View`, `Controller`, and `ViewModel`.
 - `Shared`: reusable UI components and validation utilities.
 
-See `Docs/Architecture.md` for the module rules and `Docs/FeatureModuleTemplate.md` when adding a new feature.
+See `Docs/Architecture.md` for the module rules, `Docs/FeatureModuleTemplate.md` when adding a new feature, and `Docs/Swift6Migration.md` for Swift 6 readiness rules.
 
 ## Development
 
-Open `PJCiOSApp.xcodeproj` in Xcode 26 or later.
+Open `PJCiOSApp.xcodeproj` in Xcode 26 or later. The minimum supported system is iOS 18.0.
+The project remains on Swift 5 mode, with concurrency boundaries annotated to keep a future Swift 6 migration straightforward.
 
 ```bash
 xcodebuild -project PJCiOSApp.xcodeproj -scheme PJCiOSApp -destination 'platform=iOS Simulator,name=iPhone 17' test

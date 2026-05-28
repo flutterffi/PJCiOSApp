@@ -1,23 +1,32 @@
 import Foundation
 
-struct UserSession: Equatable {
+struct UserSession: Equatable, Sendable {
     let userID: String
     let displayName: String
     let token: String
 }
 
 protocol AuthServicing {
-    func login(email: String, password: String, completion: @escaping (Result<UserSession, AuthError>) -> Void)
+    func login(
+        email: String,
+        password: String,
+        completion: @Sendable @escaping (Result<UserSession, AuthError>) -> Void
+    )
+
     func register(
         name: String,
         email: String,
         password: String,
-        completion: @escaping (Result<UserSession, AuthError>) -> Void
+        completion: @Sendable @escaping (Result<UserSession, AuthError>) -> Void
     )
-    func requestPasswordReset(email: String, completion: @escaping (Result<String, AuthError>) -> Void)
+
+    func requestPasswordReset(
+        email: String,
+        completion: @Sendable @escaping (Result<String, AuthError>) -> Void
+    )
 }
 
-enum AuthError: LocalizedError, Equatable {
+enum AuthError: LocalizedError, Equatable, Sendable {
     case invalidCredentials
     case network(String)
 
@@ -32,7 +41,11 @@ enum AuthError: LocalizedError, Equatable {
 }
 
 final class DemoAuthService: AuthServicing {
-    func login(email: String, password: String, completion: @escaping (Result<UserSession, AuthError>) -> Void) {
+    func login(
+        email: String,
+        password: String,
+        completion: @Sendable @escaping (Result<UserSession, AuthError>) -> Void
+    ) {
         DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + 0.35) {
             let name = email.split(separator: "@").first.map(String.init) ?? "User"
             completion(.success(UserSession(userID: UUID().uuidString, displayName: name, token: "demo-token")))
@@ -43,14 +56,17 @@ final class DemoAuthService: AuthServicing {
         name: String,
         email: String,
         password: String,
-        completion: @escaping (Result<UserSession, AuthError>) -> Void
+        completion: @Sendable @escaping (Result<UserSession, AuthError>) -> Void
     ) {
         DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + 0.35) {
             completion(.success(UserSession(userID: UUID().uuidString, displayName: name, token: "demo-token")))
         }
     }
 
-    func requestPasswordReset(email: String, completion: @escaping (Result<String, AuthError>) -> Void) {
+    func requestPasswordReset(
+        email: String,
+        completion: @Sendable @escaping (Result<String, AuthError>) -> Void
+    ) {
         DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + 0.35) {
             completion(.success("Password reset instructions were sent to \(email)."))
         }
@@ -66,7 +82,11 @@ final class RemoteAuthService: AuthServicing {
         self.tokenStore = tokenStore
     }
 
-    func login(email: String, password: String, completion: @escaping (Result<UserSession, AuthError>) -> Void) {
+    func login(
+        email: String,
+        password: String,
+        completion: @Sendable @escaping (Result<UserSession, AuthError>) -> Void
+    ) {
         let endpoint = AuthEndpoint.login(email: email, password: password)
         apiClient.request(endpoint) { [tokenStore] (result: Result<LoginResponse, NetworkError>) in
             switch result {
@@ -83,7 +103,7 @@ final class RemoteAuthService: AuthServicing {
         name: String,
         email: String,
         password: String,
-        completion: @escaping (Result<UserSession, AuthError>) -> Void
+        completion: @Sendable @escaping (Result<UserSession, AuthError>) -> Void
     ) {
         let endpoint = AuthEndpoint.register(name: name, email: email, password: password)
         apiClient.request(endpoint) { [tokenStore] (result: Result<LoginResponse, NetworkError>) in
@@ -97,7 +117,10 @@ final class RemoteAuthService: AuthServicing {
         }
     }
 
-    func requestPasswordReset(email: String, completion: @escaping (Result<String, AuthError>) -> Void) {
+    func requestPasswordReset(
+        email: String,
+        completion: @Sendable @escaping (Result<String, AuthError>) -> Void
+    ) {
         apiClient.request(AuthEndpoint.forgotPassword(email: email)) { (result: Result<ForgotPasswordResponse, NetworkError>) in
             switch result {
             case .success(let response):
@@ -145,27 +168,27 @@ private enum AuthEndpoint: APIEndpoint {
     }
 }
 
-private struct LoginRequest: Encodable {
+private struct LoginRequest: Encodable, Sendable {
     let email: String
     let password: String
 }
 
-private struct RegisterRequest: Encodable {
+private struct RegisterRequest: Encodable, Sendable {
     let name: String
     let email: String
     let password: String
 }
 
-private struct ForgotPasswordRequest: Encodable {
+private struct ForgotPasswordRequest: Encodable, Sendable {
     let email: String
 }
 
-private struct LoginResponse: Decodable {
+private struct LoginResponse: Decodable, Sendable {
     let token: String
     let user: AuthUserResponse
 }
 
-private struct AuthUserResponse: Decodable {
+private struct AuthUserResponse: Decodable, Sendable {
     let id: String
     let name: String
 
@@ -174,6 +197,6 @@ private struct AuthUserResponse: Decodable {
     }
 }
 
-private struct ForgotPasswordResponse: Decodable {
+private struct ForgotPasswordResponse: Decodable, Sendable {
     let message: String
 }
