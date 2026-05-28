@@ -46,6 +46,7 @@
 		011111111111111111111138 /* AppSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111138 /* AppSpacing.swift */; };
 		011111111111111111111139 /* AppTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111139 /* AppTextFieldStyle.swift */; };
 		01111111111111111111113A /* Assets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11111111111111111111113A /* Assets+Generated.swift */; };
+		01111111111111111111113B /* DesignSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11111111111111111111113B /* DesignSystemTests.swift */; };
 		0D1111111111111111111111 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0E1111111111111111111111 /* Alamofire */; };
 		0D1111111111111111111112 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0E1111111111111111111112 /* Kingfisher */; };
 		0D1111111111111111111113 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0E1111111111111111111113 /* SnapKit */; };
@@ -104,6 +105,7 @@
 		111111111111111111111138 /* AppSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSpacing.swift; sourceTree = "<group>"; };
 		111111111111111111111139 /* AppTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextFieldStyle.swift; sourceTree = "<group>"; };
 		11111111111111111111113A /* Assets+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assets+Generated.swift"; sourceTree = "<group>"; };
+		11111111111111111111113B /* DesignSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -386,6 +388,7 @@
 				111111111111111111111124 /* LoginViewModelTests.swift */,
 				111111111111111111111129 /* APIClientTests.swift */,
 				11111111111111111111112B /* RemoteAuthServiceTests.swift */,
+				11111111111111111111113B /* DesignSystemTests.swift */,
 			);
 			path = PJCiOSAppTests;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				011111111111111111111124 /* LoginViewModelTests.swift in Sources */,
 				011111111111111111111129 /* APIClientTests.swift in Sources */,
 				01111111111111111111112B /* RemoteAuthServiceTests.swift in Sources */,
+				01111111111111111111113B /* DesignSystemTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
