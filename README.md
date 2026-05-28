@@ -34,3 +34,16 @@ Network requests are centralized behind `APIClienting`.
 - `AlamofireAPIClient`: builds the request from the current environment, injects bearer tokens, executes with Alamofire, and maps errors.
 
 Switch environments through `AppEnvironment.current` by assigning `network` to `.local`, `.development`, `.staging`, or `.production`.
+
+The `.local` environment points to the Mockoon server in `flutterffi/PJCiOSMockServer`:
+
+```text
+http://localhost:3001
+```
+
+Start the local mock API with Docker:
+
+```bash
+cd /Users/platojobs/Desktop/GitHub/flutterffi/PJCiOSMockServer
+docker compose up
+```

@@ -16,7 +16,7 @@ struct NetworkEnvironment: Equatable {
 
     static let local = NetworkEnvironment(
         name: .local,
-        baseURL: URL(string: "http://localhost:8080")!,
+        baseURL: URL(string: "http://localhost:3001")!,
         defaultHeaders: Self.defaultJSONHeaders,
         timeoutInterval: 20,
         logsRequests: true
