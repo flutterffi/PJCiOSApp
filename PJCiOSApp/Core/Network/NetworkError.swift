@@ -1,3 +1,4 @@
+import Alamofire
 import Foundation
 
 enum NetworkError: LocalizedError {
@@ -6,6 +7,19 @@ enum NetworkError: LocalizedError {
     case server(statusCode: Int)
     case emptyData
     case decoding(Error)
+
+    init(error: AFError, statusCode: Int?) {
+        if let statusCode, !(200..<300).contains(statusCode) {
+            self = .server(statusCode: statusCode)
+            return
+        }
+
+        if case .responseSerializationFailed = error {
+            self = .decoding(error)
+        } else {
+            self = .transport(error)
+        }
+    }
 
     var errorDescription: String? {
         switch self {

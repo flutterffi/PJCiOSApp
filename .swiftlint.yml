@@ -1,0 +1,27 @@
+included:
+  - PJCiOSApp
+  - PJCiOSAppTests
+
+excluded:
+  - .build
+  - PJCiOSApp.xcodeproj
+
+disabled_rules:
+  - trailing_whitespace
+
+opt_in_rules:
+  - empty_count
+  - fatal_error_message
+  - sorted_imports
+
+line_length:
+  warning: 140
+  error: 180
+
+type_body_length:
+  warning: 300
+  error: 500
+
+file_length:
+  warning: 500
+  error: 800

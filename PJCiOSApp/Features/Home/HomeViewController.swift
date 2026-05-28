@@ -1,3 +1,4 @@
+import SnapKit
 import UIKit
 
 final class HomeViewController: UIViewController {
@@ -38,11 +39,10 @@ final class HomeViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(stackView)
 
-        NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
+        stackView.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(view.layoutMarginsGuide)
+            make.centerY.equalToSuperview()
+        }
     }
 
     private func render() {

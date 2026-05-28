@@ -16,3 +16,11 @@ Open `PJCiOSApp.xcodeproj` in Xcode 26 or later.
 ```bash
 xcodebuild -project PJCiOSApp.xcodeproj -scheme PJCiOSApp -destination 'platform=iOS Simulator,name=iPhone 17' test
 ```
+
+## Integrated Libraries
+
+- Alamofire: app networking client.
+- Kingfisher: remote image loading and caching.
+- SnapKit: UIKit Auto Layout DSL.
+- Sentry: crash and performance monitoring hook. Set `AppEnvironment.sentryDSN` before enabling uploads.
+- SwiftLint: style checks through `.swiftlint.yml` and the Xcode build phase. If `swiftlint` is not installed locally, builds emit a warning and continue.

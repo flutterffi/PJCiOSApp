@@ -1,3 +1,4 @@
+import SnapKit
 import UIKit
 
 final class LoginViewController: UIViewController {
@@ -64,13 +65,16 @@ final class LoginViewController: UIViewController {
         [emailTextField, passwordTextField, loginButton, activityIndicator, messageLabel].forEach(stackView.addArrangedSubview)
         view.addSubview(stackView)
 
-        NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            emailTextField.heightAnchor.constraint(equalToConstant: 44),
-            passwordTextField.heightAnchor.constraint(equalToConstant: 44)
-        ])
+        stackView.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(view.layoutMarginsGuide)
+            make.centerY.equalToSuperview()
+        }
+
+        [emailTextField, passwordTextField].forEach { textField in
+            textField.snp.makeConstraints { make in
+                make.height.equalTo(44)
+            }
+        }
     }
 
     private func bindViewModel() {

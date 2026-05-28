@@ -27,6 +27,11 @@
 		011111111111111111111122 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111122 /* Assets.xcassets */; };
 		011111111111111111111123 /* CredentialValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111123 /* CredentialValidatorTests.swift */; };
 		011111111111111111111124 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111124 /* LoginViewModelTests.swift */; };
+		011111111111111111111127 /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111127 /* RemoteImageView.swift */; };
+		0D1111111111111111111111 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0E1111111111111111111111 /* Alamofire */; };
+		0D1111111111111111111112 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0E1111111111111111111112 /* Kingfisher */; };
+		0D1111111111111111111113 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0E1111111111111111111113 /* SnapKit */; };
+		0D1111111111111111111114 /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = 0E1111111111111111111114 /* Sentry */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +67,7 @@
 		111111111111111111111124 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		111111111111111111111125 /* PJCiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PJCiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		111111111111111111111126 /* PJCiOSAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PJCiOSAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		111111111111111111111127 /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D1111111111111111111111 /* Alamofire in Frameworks */,
+				0D1111111111111111111112 /* Kingfisher in Frameworks */,
+				0D1111111111111111111113 /* SnapKit in Frameworks */,
+				0D1111111111111111111114 /* Sentry in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				11111111111111111111111C /* PrimaryButton.swift */,
+				111111111111111111111127 /* RemoteImageView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -253,8 +264,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 077777777777777777777771 /* Build configuration list for PBXNativeTarget "PJCiOSApp" */;
 			buildPhases = (
+				0A1111111111111111111111 /* SwiftLint */,
 				088888888888888888888881 /* Sources */,
-				088888888888888888888882 /* Frameworks */,
+				055555555555555555555551 /* Frameworks */,
 				088888888888888888888883 /* Resources */,
 			);
 			buildRules = (
@@ -262,6 +274,12 @@
 			dependencies = (
 			);
 			name = PJCiOSApp;
+			packageProductDependencies = (
+				0E1111111111111111111111 /* Alamofire */,
+				0E1111111111111111111112 /* Kingfisher */,
+				0E1111111111111111111113 /* SnapKit */,
+				0E1111111111111111111114 /* Sentry */,
+			);
 			productName = PJCiOSApp;
 			productReference = 111111111111111111111125 /* PJCiOSApp.app */;
 			productType = "com.apple.product-type.application";
@@ -312,6 +330,12 @@
 			);
 			mainGroup = 066666666666666666666661;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				0F1111111111111111111111 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				0F1111111111111111111112 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				0F1111111111111111111113 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				0F1111111111111111111114 /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 066666666666666666666680 /* Products */;
 			projectDirPath = "";
@@ -363,6 +387,7 @@
 				01111111111111111111111F /* LoginViewController.swift in Sources */,
 				011111111111111111111120 /* HomeViewModel.swift in Sources */,
 				011111111111111111111121 /* HomeViewController.swift in Sources */,
+				011111111111111111111127 /* RemoteImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +409,28 @@
 			targetProxy = 022222222222222222222221 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A1111111111111111111111 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if command -v swiftlint >/dev/null 2>&1; then\n  swiftlint --config \"${SRCROOT}/.swiftlint.yml\"\nelse\n  echo \"warning: SwiftLint is not installed. Install it from https://github.com/realm/SwiftLint to enable lint checks.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
 		0AAAAAAAAAAAAAAAAAAAAAAA1 /* Debug */ = {
@@ -633,6 +680,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0F1111111111111111111111 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.0;
+			};
+		};
+		0F1111111111111111111112 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		0F1111111111111111111113 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		0F1111111111111111111114 /* XCRemoteSwiftPackageReference "sentry-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/getsentry/sentry-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0E1111111111111111111111 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F1111111111111111111111 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		0E1111111111111111111112 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F1111111111111111111112 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		0E1111111111111111111113 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F1111111111111111111113 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		0E1111111111111111111114 /* Sentry */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F1111111111111111111114 /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
+			productName = Sentry;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 333333333333333333333331 /* Project object */;
 }
