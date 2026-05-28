@@ -25,3 +25,9 @@ final class UserDefaultsStore: KeyValueStoring {
         defaults.removeObject(forKey: key)
     }
 }
+
+extension UserDefaultsStore: AuthorizationTokenProviding {
+    var authorizationToken: String? {
+        string(forKey: "auth.token")
+    }
+}

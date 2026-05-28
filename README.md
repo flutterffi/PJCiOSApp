@@ -24,3 +24,13 @@ xcodebuild -project PJCiOSApp.xcodeproj -scheme PJCiOSApp -destination 'platform
 - SnapKit: UIKit Auto Layout DSL.
 - Sentry: crash and performance monitoring hook. Set `AppEnvironment.sentryDSN` before enabling uploads.
 - SwiftLint: style checks through `.swiftlint.yml` and the Xcode build phase. If `swiftlint` is not installed locally, builds emit a warning and continue.
+
+## Networking
+
+Network requests are centralized behind `APIClienting`.
+
+- `NetworkEnvironment`: owns base URL, default headers, timeout, and request logging.
+- `APIEndpoint`: describes path, method, query items, custom headers, body, and auth requirement.
+- `AlamofireAPIClient`: builds the request from the current environment, injects bearer tokens, executes with Alamofire, and maps errors.
+
+Switch environments through `AppEnvironment.current` by assigning `network` to `.local`, `.development`, `.staging`, or `.production`.

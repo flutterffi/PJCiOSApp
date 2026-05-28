@@ -10,8 +10,13 @@ final class AppContainer {
     init(environment: AppEnvironment) {
         self.environment = environment
         self.logger = AppLogger(subsystem: "com.flutterffi.PJCiOSApp")
-        self.apiClient = AlamofireAPIClient(baseURL: environment.apiBaseURL)
-        self.keyValueStore = UserDefaultsStore()
+        let keyValueStore = UserDefaultsStore()
+        self.keyValueStore = keyValueStore
+        self.apiClient = AlamofireAPIClient(
+            environment: environment.network,
+            tokenProvider: keyValueStore,
+            logger: logger
+        )
         self.authService = DemoAuthService()
     }
 

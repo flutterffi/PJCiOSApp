@@ -28,6 +28,8 @@
 		011111111111111111111123 /* CredentialValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111123 /* CredentialValidatorTests.swift */; };
 		011111111111111111111124 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111124 /* LoginViewModelTests.swift */; };
 		011111111111111111111127 /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111127 /* RemoteImageView.swift */; };
+		011111111111111111111128 /* NetworkEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111128 /* NetworkEnvironment.swift */; };
+		011111111111111111111129 /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111129 /* APIClientTests.swift */; };
 		0D1111111111111111111111 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0E1111111111111111111111 /* Alamofire */; };
 		0D1111111111111111111112 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0E1111111111111111111112 /* Kingfisher */; };
 		0D1111111111111111111113 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0E1111111111111111111113 /* SnapKit */; };
@@ -68,6 +70,8 @@
 		111111111111111111111125 /* PJCiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PJCiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		111111111111111111111126 /* PJCiOSAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PJCiOSAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		111111111111111111111127 /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
+		111111111111111111111128 /* NetworkEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEnvironment.swift; sourceTree = "<group>"; };
+		111111111111111111111129 /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,7 @@
 				111111111111111111111117 /* APIEndpoint.swift */,
 				111111111111111111111118 /* APIClient.swift */,
 				111111111111111111111119 /* NetworkError.swift */,
+				111111111111111111111128 /* NetworkEnvironment.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 			children = (
 				111111111111111111111123 /* CredentialValidatorTests.swift */,
 				111111111111111111111124 /* LoginViewModelTests.swift */,
+				111111111111111111111129 /* APIClientTests.swift */,
 			);
 			path = PJCiOSAppTests;
 			sourceTree = "<group>";
@@ -388,6 +394,7 @@
 				011111111111111111111120 /* HomeViewModel.swift in Sources */,
 				011111111111111111111121 /* HomeViewController.swift in Sources */,
 				011111111111111111111127 /* RemoteImageView.swift in Sources */,
+				011111111111111111111128 /* NetworkEnvironment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +404,7 @@
 			files = (
 				011111111111111111111123 /* CredentialValidatorTests.swift in Sources */,
 				011111111111111111111124 /* LoginViewModelTests.swift in Sources */,
+				011111111111111111111129 /* APIClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

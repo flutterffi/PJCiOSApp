@@ -2,6 +2,8 @@ import Alamofire
 import Foundation
 
 enum NetworkError: LocalizedError {
+    case invalidURL
+    case requestEncoding(Error)
     case transport(Error)
     case invalidResponse
     case server(statusCode: Int)
@@ -23,6 +25,10 @@ enum NetworkError: LocalizedError {
 
     var errorDescription: String? {
         switch self {
+        case .invalidURL:
+            return "Invalid request URL."
+        case .requestEncoding(let error):
+            return "Failed to encode request: \(error.localizedDescription)"
         case .transport(let error):
             return error.localizedDescription
         case .invalidResponse:
