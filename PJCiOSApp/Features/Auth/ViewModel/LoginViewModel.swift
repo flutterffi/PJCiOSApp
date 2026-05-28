@@ -1,5 +1,6 @@
 import Foundation
 
+@MainActor
 final class LoginViewModel {
     enum State: Equatable {
         case idle
@@ -31,7 +32,7 @@ final class LoginViewModel {
 
         state.value = .loading
         authService.login(email: email, password: password) { [weak self] result in
-            DispatchQueue.main.async {
+            Task { @MainActor in
                 switch result {
                 case .success(let session):
                     self?.logger.info("User authenticated: \(session.userID)")

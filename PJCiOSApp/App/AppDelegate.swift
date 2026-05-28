@@ -3,27 +3,26 @@ import UIKit
 
 @main
 final class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
-
-    private let container = AppContainer(environment: .current)
-    private var coordinator: AppCoordinator?
+    private let environment = AppEnvironment.current
 
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         configureSentry()
-
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        let coordinator = AppCoordinator(window: window, container: container)
-        self.window = window
-        self.coordinator = coordinator
-        coordinator.start()
         return true
     }
 
+    func application(
+        _ application: UIApplication,
+        configurationForConnecting connectingSceneSession: UISceneSession,
+        options: UIScene.ConnectionOptions
+    ) -> UISceneConfiguration {
+        UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    }
+
     private func configureSentry() {
-        guard let dsn = container.environment.sentryDSN, !dsn.isEmpty else {
+        guard let dsn = environment.sentryDSN, !dsn.isEmpty else {
             return
         }
 

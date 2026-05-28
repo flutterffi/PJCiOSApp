@@ -2,6 +2,8 @@
 
 PJCiOSApp uses a UIKit MVVM architecture. Feature code is organized by module first, then by layer.
 
+The project follows a latest-platform policy: iOS 26+ and Swift 6 language mode are the baseline. New code can use current UIKit, Swift, and concurrency APIs without preserving compatibility for older iOS versions.
+
 ## Top-Level Structure
 
 ```text

@@ -13,7 +13,7 @@ See `Docs/Architecture.md` for the module rules and `Docs/FeatureModuleTemplate.
 
 ## Development
 
-Open `PJCiOSApp.xcodeproj` in Xcode 26 or later.
+Open `PJCiOSApp.xcodeproj` in Xcode 26 or later. The app targets iOS 26+ and uses Swift 6 language mode.
 
 ```bash
 xcodebuild -project PJCiOSApp.xcodeproj -scheme PJCiOSApp -destination 'platform=iOS Simulator,name=iPhone 17' test

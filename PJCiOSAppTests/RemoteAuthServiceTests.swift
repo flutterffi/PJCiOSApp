@@ -105,16 +105,19 @@ private final class APIClientSpy: APIClienting {
         self.response = response
     }
 
-    func request<T: Decodable>(_ endpoint: APIEndpoint, completion: @escaping (Result<T, NetworkError>) -> Void) {
+    func request<T: Decodable & Sendable>(
+        _ endpoint: APIEndpoint,
+        completion: @Sendable @escaping (Result<T, NetworkError>) -> Void
+    ) {
         do {
             completion(.success(try JSONDecoder().decode(T.self, from: response)))
         } catch {
-            completion(.failure(.decoding(error)))
+            completion(.failure(.decoding(error.localizedDescription)))
         }
     }
 }
 
-private final class KeyValueStoreSpy: KeyValueStoring {
+private final class KeyValueStoreSpy: KeyValueStoring, @unchecked Sendable {
     var values: [String: String] = [:]
 
     func string(forKey key: String) -> String? {
