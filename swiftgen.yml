@@ -1,0 +1,8 @@
+xcassets:
+  inputs:
+    - PJCiOSApp/Resources/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      output: PJCiOSApp/Shared/Resources/Generated/Assets+Generated.swift
+      params:
+        enumName: AppAsset

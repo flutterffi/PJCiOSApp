@@ -12,6 +12,7 @@ final class AppCoordinator {
     }
 
     func start() {
+        AppNavigationStyle.apply(to: navigationController)
         showLogin()
         window.rootViewController = navigationController
         window.makeKeyAndVisible()

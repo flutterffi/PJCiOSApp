@@ -1,3 +1,4 @@
+import SnapKit
 import UIKit
 
 final class PrimaryButton: UIButton {
@@ -12,22 +13,37 @@ final class PrimaryButton: UIButton {
     }
 
     private func configure() {
-        layer.cornerRadius = 8
-        titleLabel?.font = .systemFont(ofSize: 16, weight: .semibold)
+        layer.cornerRadius = AppRadius.control
+        titleLabel?.font = AppFont.callout.withWeight(.semibold)
         setTitleColor(.white, for: .normal)
         setTitleColor(.white.withAlphaComponent(0.6), for: .disabled)
 
         var configuration = UIButton.Configuration.filled()
-        configuration.baseBackgroundColor = .systemBlue
+        configuration.baseBackgroundColor = AppColor.primary
         configuration.baseForegroundColor = .white
         configuration.cornerStyle = .medium
-        configuration.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16)
+        configuration.contentInsets = NSDirectionalEdgeInsets(
+            top: AppSpacing.medium,
+            leading: AppSpacing.large,
+            bottom: AppSpacing.medium,
+            trailing: AppSpacing.large
+        )
         self.configuration = configuration
+
+        snp.makeConstraints { make in
+            make.height.greaterThanOrEqualTo(AppLayout.buttonMinHeight)
+        }
     }
 
     override var isEnabled: Bool {
         didSet {
             alpha = isEnabled ? 1.0 : 0.6
         }
+    }
+}
+
+private extension UIFont {
+    func withWeight(_ weight: UIFont.Weight) -> UIFont {
+        .systemFont(ofSize: pointSize, weight: weight)
     }
 }

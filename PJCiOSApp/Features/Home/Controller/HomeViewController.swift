@@ -24,25 +24,23 @@ final class HomeViewController: UIViewController {
 
     private func configureView() {
         title = "Home"
-        view.backgroundColor = .systemBackground
-        titleLabel.font = .systemFont(ofSize: 28, weight: .bold)
+        view.backgroundColor = AppColor.background
+        titleLabel.font = AppFont.title
+        titleLabel.textColor = AppColor.textPrimary
         titleLabel.numberOfLines = 0
-        subtitleLabel.font = .systemFont(ofSize: 17)
-        subtitleLabel.textColor = .secondaryLabel
+        subtitleLabel.font = AppFont.body
+        subtitleLabel.textColor = AppColor.textSecondary
         subtitleLabel.numberOfLines = 0
     }
 
     private func configureLayout() {
         let stackView = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
         stackView.axis = .vertical
-        stackView.spacing = 12
+        stackView.spacing = AppSpacing.medium
         stackView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(stackView)
 
-        stackView.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(view.layoutMarginsGuide)
-            make.centerY.equalToSuperview()
-        }
+        AppLayout.pinReadableStack(stackView, in: view)
     }
 
     private func render() {

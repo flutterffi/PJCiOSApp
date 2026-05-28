@@ -38,6 +38,14 @@
 		011111111111111111111130 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111130 /* ForgotPasswordViewModel.swift */; };
 		011111111111111111111131 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111131 /* RegisterViewController.swift */; };
 		011111111111111111111132 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111132 /* ForgotPasswordViewController.swift */; };
+		011111111111111111111133 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111133 /* AppColor.swift */; };
+		011111111111111111111134 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111134 /* AppFont.swift */; };
+		011111111111111111111135 /* AppLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111135 /* AppLayout.swift */; };
+		011111111111111111111136 /* AppNavigationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111136 /* AppNavigationStyle.swift */; };
+		011111111111111111111137 /* AppRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111137 /* AppRadius.swift */; };
+		011111111111111111111138 /* AppSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111138 /* AppSpacing.swift */; };
+		011111111111111111111139 /* AppTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111139 /* AppTextFieldStyle.swift */; };
+		01111111111111111111113A /* Assets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11111111111111111111113A /* Assets+Generated.swift */; };
 		0D1111111111111111111111 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0E1111111111111111111111 /* Alamofire */; };
 		0D1111111111111111111112 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0E1111111111111111111112 /* Kingfisher */; };
 		0D1111111111111111111113 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0E1111111111111111111113 /* SnapKit */; };
@@ -88,6 +96,14 @@
 		111111111111111111111130 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		111111111111111111111131 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		111111111111111111111132 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		111111111111111111111133 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		111111111111111111111134 /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
+		111111111111111111111135 /* AppLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLayout.swift; sourceTree = "<group>"; };
+		111111111111111111111136 /* AppNavigationStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationStyle.swift; sourceTree = "<group>"; };
+		111111111111111111111137 /* AppRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRadius.swift; sourceTree = "<group>"; };
+		111111111111111111111138 /* AppSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSpacing.swift; sourceTree = "<group>"; };
+		111111111111111111111139 /* AppTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextFieldStyle.swift; sourceTree = "<group>"; };
+		11111111111111111111113A /* Assets+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assets+Generated.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,10 +316,42 @@
 		06666666666666666666666D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				066666666666666666666682 /* DesignSystem */,
+				066666666666666666666683 /* Resources */,
 				06666666666666666666666E /* UI */,
 				066666666666666666666681 /* Validation */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		066666666666666666666682 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				111111111111111111111133 /* AppColor.swift */,
+				111111111111111111111134 /* AppFont.swift */,
+				111111111111111111111135 /* AppLayout.swift */,
+				111111111111111111111136 /* AppNavigationStyle.swift */,
+				111111111111111111111137 /* AppRadius.swift */,
+				111111111111111111111138 /* AppSpacing.swift */,
+				111111111111111111111139 /* AppTextFieldStyle.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		066666666666666666666683 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				066666666666666666666684 /* Generated */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		066666666666666666666684 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				11111111111111111111113A /* Assets+Generated.swift */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 		06666666666666666666666E /* UI */ = {
@@ -358,6 +406,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 077777777777777777777771 /* Build configuration list for PBXNativeTarget "PJCiOSApp" */;
 			buildPhases = (
+				0A1111111111111111111112 /* SwiftGen */,
 				0A1111111111111111111111 /* SwiftLint */,
 				088888888888888888888881 /* Sources */,
 				055555555555555555555551 /* Frameworks */,
@@ -490,6 +539,14 @@
 				011111111111111111111121 /* HomeViewController.swift in Sources */,
 				011111111111111111111127 /* RemoteImageView.swift in Sources */,
 				011111111111111111111128 /* NetworkEnvironment.swift in Sources */,
+				011111111111111111111133 /* AppColor.swift in Sources */,
+				011111111111111111111134 /* AppFont.swift in Sources */,
+				011111111111111111111135 /* AppLayout.swift in Sources */,
+				011111111111111111111136 /* AppNavigationStyle.swift in Sources */,
+				011111111111111111111137 /* AppRadius.swift in Sources */,
+				011111111111111111111138 /* AppSpacing.swift in Sources */,
+				011111111111111111111139 /* AppTextFieldStyle.swift in Sources */,
+				01111111111111111111113A /* Assets+Generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +572,28 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0A1111111111111111111112 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/swiftgen.yml",
+				"$(SRCROOT)/PJCiOSApp/Resources/Assets.xcassets",
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/PJCiOSApp/Shared/Resources/Generated/Assets+Generated.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if command -v swiftgen >/dev/null 2>&1; then\n  swiftgen config run --config \"${SRCROOT}/swiftgen.yml\"\nelse\n  echo \"warning: SwiftGen is not installed. Install it with Homebrew to regenerate typed resources.\"\nfi\n";
+		};
 		0A1111111111111111111111 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;

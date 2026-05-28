@@ -18,19 +18,19 @@ final class ForgotPasswordView: UIView {
     }
 
     private func configure() {
-        backgroundColor = .systemBackground
+        backgroundColor = AppColor.background
 
         emailTextField.placeholder = "Email"
         emailTextField.textContentType = .emailAddress
         emailTextField.keyboardType = .emailAddress
         emailTextField.autocapitalizationType = .none
-        emailTextField.borderStyle = .roundedRect
+        AppTextFieldStyle.apply(to: emailTextField)
 
         submitButton.setTitle("Send Reset Link", for: .normal)
 
         messageLabel.numberOfLines = 0
-        messageLabel.font = .systemFont(ofSize: 14)
-        messageLabel.textColor = .secondaryLabel
+        messageLabel.font = AppFont.footnote
+        messageLabel.textColor = AppColor.textSecondary
         messageLabel.textAlignment = .center
 
         let stackView = UIStackView(arrangedSubviews: [
@@ -40,16 +40,13 @@ final class ForgotPasswordView: UIView {
             messageLabel
         ])
         stackView.axis = .vertical
-        stackView.spacing = 16
+        stackView.spacing = AppSpacing.large
         addSubview(stackView)
 
-        stackView.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(layoutMarginsGuide)
-            make.centerY.equalToSuperview()
-        }
+        AppLayout.pinFormStack(stackView, in: self)
 
         emailTextField.snp.makeConstraints { make in
-            make.height.equalTo(44)
+            make.height.equalTo(AppLayout.textFieldHeight)
         }
     }
 }
