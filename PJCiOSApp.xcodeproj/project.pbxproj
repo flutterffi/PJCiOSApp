@@ -1,0 +1,638 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		011111111111111111111111 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111111 /* AppDelegate.swift */; };
+		011111111111111111111112 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111112 /* AppEnvironment.swift */; };
+		011111111111111111111113 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111113 /* AppContainer.swift */; };
+		011111111111111111111114 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111114 /* AppCoordinator.swift */; };
+		011111111111111111111115 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111115 /* Observable.swift */; };
+		011111111111111111111116 /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111116 /* AppLogger.swift */; };
+		011111111111111111111117 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111117 /* APIEndpoint.swift */; };
+		011111111111111111111118 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111118 /* APIClient.swift */; };
+		011111111111111111111119 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111119 /* NetworkError.swift */; };
+		01111111111111111111111A /* KeyValueStoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11111111111111111111111A /* KeyValueStoring.swift */; };
+		01111111111111111111111B /* CredentialValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11111111111111111111111B /* CredentialValidator.swift */; };
+		01111111111111111111111C /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11111111111111111111111C /* PrimaryButton.swift */; };
+		01111111111111111111111D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11111111111111111111111D /* AuthService.swift */; };
+		01111111111111111111111E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11111111111111111111111E /* LoginViewModel.swift */; };
+		01111111111111111111111F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11111111111111111111111F /* LoginViewController.swift */; };
+		011111111111111111111120 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111120 /* HomeViewModel.swift */; };
+		011111111111111111111121 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111121 /* HomeViewController.swift */; };
+		011111111111111111111122 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111122 /* Assets.xcassets */; };
+		011111111111111111111123 /* CredentialValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111123 /* CredentialValidatorTests.swift */; };
+		011111111111111111111124 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111124 /* LoginViewModelTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		022222222222222222222221 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 333333333333333333333331 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 444444444444444444444441;
+			remoteInfo = PJCiOSApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		111111111111111111111111 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		111111111111111111111112 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		111111111111111111111113 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		111111111111111111111114 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		111111111111111111111115 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		111111111111111111111116 /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
+		111111111111111111111117 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		111111111111111111111118 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		111111111111111111111119 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		11111111111111111111111A /* KeyValueStoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStoring.swift; sourceTree = "<group>"; };
+		11111111111111111111111B /* CredentialValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialValidator.swift; sourceTree = "<group>"; };
+		11111111111111111111111C /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		11111111111111111111111D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		11111111111111111111111E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		11111111111111111111111F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		111111111111111111111120 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		111111111111111111111121 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		111111111111111111111122 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		111111111111111111111123 /* CredentialValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialValidatorTests.swift; sourceTree = "<group>"; };
+		111111111111111111111124 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		111111111111111111111125 /* PJCiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PJCiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		111111111111111111111126 /* PJCiOSAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PJCiOSAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		055555555555555555555551 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		055555555555555555555552 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		066666666666666666666661 = {
+			isa = PBXGroup;
+			children = (
+				066666666666666666666662 /* PJCiOSApp */,
+				066666666666666666666670 /* PJCiOSAppTests */,
+				066666666666666666666680 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		066666666666666666666662 /* PJCiOSApp */ = {
+			isa = PBXGroup;
+			children = (
+				066666666666666666666663 /* App */,
+				066666666666666666666664 /* Application */,
+				066666666666666666666665 /* Core */,
+				06666666666666666666666A /* Features */,
+				06666666666666666666666D /* Shared */,
+				06666666666666666666666F /* Resources */,
+			);
+			path = PJCiOSApp;
+			sourceTree = "<group>";
+		};
+		066666666666666666666663 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				111111111111111111111111 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		066666666666666666666664 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				111111111111111111111112 /* AppEnvironment.swift */,
+				111111111111111111111113 /* AppContainer.swift */,
+				111111111111111111111114 /* AppCoordinator.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		066666666666666666666665 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				066666666666666666666666 /* Binding */,
+				066666666666666666666667 /* Logging */,
+				066666666666666666666668 /* Network */,
+				066666666666666666666669 /* Persistence */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		066666666666666666666666 /* Binding */ = {
+			isa = PBXGroup;
+			children = (
+				111111111111111111111115 /* Observable.swift */,
+			);
+			path = Binding;
+			sourceTree = "<group>";
+		};
+		066666666666666666666667 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				111111111111111111111116 /* AppLogger.swift */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
+		066666666666666666666668 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				111111111111111111111117 /* APIEndpoint.swift */,
+				111111111111111111111118 /* APIClient.swift */,
+				111111111111111111111119 /* NetworkError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		066666666666666666666669 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				11111111111111111111111A /* KeyValueStoring.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		06666666666666666666666A /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				06666666666666666666666B /* Auth */,
+				06666666666666666666666C /* Home */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		06666666666666666666666B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				11111111111111111111111D /* AuthService.swift */,
+				11111111111111111111111E /* LoginViewModel.swift */,
+				11111111111111111111111F /* LoginViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		06666666666666666666666C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				111111111111111111111120 /* HomeViewModel.swift */,
+				111111111111111111111121 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		06666666666666666666666D /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				06666666666666666666666E /* UI */,
+				066666666666666666666681 /* Validation */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		06666666666666666666666E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				11111111111111111111111C /* PrimaryButton.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		066666666666666666666681 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				11111111111111111111111B /* CredentialValidator.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		06666666666666666666666F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				111111111111111111111122 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		066666666666666666666670 /* PJCiOSAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				111111111111111111111123 /* CredentialValidatorTests.swift */,
+				111111111111111111111124 /* LoginViewModelTests.swift */,
+			);
+			path = PJCiOSAppTests;
+			sourceTree = "<group>";
+		};
+		066666666666666666666680 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				111111111111111111111125 /* PJCiOSApp.app */,
+				111111111111111111111126 /* PJCiOSAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		444444444444444444444441 /* PJCiOSApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 077777777777777777777771 /* Build configuration list for PBXNativeTarget "PJCiOSApp" */;
+			buildPhases = (
+				088888888888888888888881 /* Sources */,
+				088888888888888888888882 /* Frameworks */,
+				088888888888888888888883 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PJCiOSApp;
+			productName = PJCiOSApp;
+			productReference = 111111111111111111111125 /* PJCiOSApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		444444444444444444444442 /* PJCiOSAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 077777777777777777777772 /* Build configuration list for PBXNativeTarget "PJCiOSAppTests" */;
+			buildPhases = (
+				088888888888888888888884 /* Sources */,
+				055555555555555555555552 /* Frameworks */,
+				088888888888888888888885 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				099999999999999999999991 /* PBXTargetDependency */,
+			);
+			name = PJCiOSAppTests;
+			productName = PJCiOSAppTests;
+			productReference = 111111111111111111111126 /* PJCiOSAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		333333333333333333333331 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2650;
+				LastUpgradeCheck = 2650;
+				TargetAttributes = {
+					444444444444444444444441 = {
+						CreatedOnToolsVersion = 26.5;
+					};
+					444444444444444444444442 = {
+						CreatedOnToolsVersion = 26.5;
+						TestTargetID = 444444444444444444444441;
+					};
+				};
+			};
+			buildConfigurationList = 077777777777777777777770 /* Build configuration list for PBXProject "PJCiOSApp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 066666666666666666666661;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 066666666666666666666680 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				444444444444444444444441 /* PJCiOSApp */,
+				444444444444444444444442 /* PJCiOSAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		088888888888888888888883 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				011111111111111111111122 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		088888888888888888888885 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		088888888888888888888881 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				011111111111111111111111 /* AppDelegate.swift in Sources */,
+				011111111111111111111112 /* AppEnvironment.swift in Sources */,
+				011111111111111111111113 /* AppContainer.swift in Sources */,
+				011111111111111111111114 /* AppCoordinator.swift in Sources */,
+				011111111111111111111115 /* Observable.swift in Sources */,
+				011111111111111111111116 /* AppLogger.swift in Sources */,
+				011111111111111111111117 /* APIEndpoint.swift in Sources */,
+				011111111111111111111118 /* APIClient.swift in Sources */,
+				011111111111111111111119 /* NetworkError.swift in Sources */,
+				01111111111111111111111A /* KeyValueStoring.swift in Sources */,
+				01111111111111111111111B /* CredentialValidator.swift in Sources */,
+				01111111111111111111111C /* PrimaryButton.swift in Sources */,
+				01111111111111111111111D /* AuthService.swift in Sources */,
+				01111111111111111111111E /* LoginViewModel.swift in Sources */,
+				01111111111111111111111F /* LoginViewController.swift in Sources */,
+				011111111111111111111120 /* HomeViewModel.swift in Sources */,
+				011111111111111111111121 /* HomeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		088888888888888888888884 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				011111111111111111111123 /* CredentialValidatorTests.swift in Sources */,
+				011111111111111111111124 /* LoginViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		099999999999999999999991 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 444444444444444444444441 /* PJCiOSApp */;
+			targetProxy = 022222222222222222222221 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0AAAAAAAAAAAAAAAAAAAAAAA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0AAAAAAAAAAAAAAAAAAAAAAA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0BBBBBBBBBBBBBBBBBBBBBBB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flutterffi.PJCiOSApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0BBBBBBBBBBBBBBBBBBBBBBB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flutterffi.PJCiOSApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0CCCCCCCCCCCCCCCCCCCCCCC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flutterffi.PJCiOSAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PJCiOSApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PJCiOSApp";
+			};
+			name = Debug;
+		};
+		0CCCCCCCCCCCCCCCCCCCCCCC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flutterffi.PJCiOSAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PJCiOSApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PJCiOSApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		077777777777777777777770 /* Build configuration list for PBXProject "PJCiOSApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AAAAAAAAAAAAAAAAAAAAAAA1 /* Debug */,
+				0AAAAAAAAAAAAAAAAAAAAAAA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		077777777777777777777771 /* Build configuration list for PBXNativeTarget "PJCiOSApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BBBBBBBBBBBBBBBBBBBBBBB1 /* Debug */,
+				0BBBBBBBBBBBBBBBBBBBBBBB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		077777777777777777777772 /* Build configuration list for PBXNativeTarget "PJCiOSAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0CCCCCCCCCCCCCCCCCCCCCCC1 /* Debug */,
+				0CCCCCCCCCCCCCCCCCCCCCCC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 333333333333333333333331 /* Project object */;
+}
