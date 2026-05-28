@@ -30,6 +30,14 @@
 		011111111111111111111127 /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111127 /* RemoteImageView.swift */; };
 		011111111111111111111128 /* NetworkEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111128 /* NetworkEnvironment.swift */; };
 		011111111111111111111129 /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111129 /* APIClientTests.swift */; };
+		01111111111111111111112B /* RemoteAuthServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11111111111111111111112B /* RemoteAuthServiceTests.swift */; };
+		01111111111111111111112C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11111111111111111111112C /* LoginView.swift */; };
+		01111111111111111111112D /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11111111111111111111112D /* RegisterView.swift */; };
+		01111111111111111111112E /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11111111111111111111112E /* ForgotPasswordView.swift */; };
+		01111111111111111111112F /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11111111111111111111112F /* RegisterViewModel.swift */; };
+		011111111111111111111130 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111130 /* ForgotPasswordViewModel.swift */; };
+		011111111111111111111131 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111131 /* RegisterViewController.swift */; };
+		011111111111111111111132 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111132 /* ForgotPasswordViewController.swift */; };
 		0D1111111111111111111111 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0E1111111111111111111111 /* Alamofire */; };
 		0D1111111111111111111112 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0E1111111111111111111112 /* Kingfisher */; };
 		0D1111111111111111111113 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0E1111111111111111111113 /* SnapKit */; };
@@ -72,6 +80,14 @@
 		111111111111111111111127 /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
 		111111111111111111111128 /* NetworkEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEnvironment.swift; sourceTree = "<group>"; };
 		111111111111111111111129 /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
+		11111111111111111111112B /* RemoteAuthServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthServiceTests.swift; sourceTree = "<group>"; };
+		11111111111111111111112C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		11111111111111111111112D /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		11111111111111111111112E /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		11111111111111111111112F /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		111111111111111111111130 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		111111111111111111111131 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		111111111111111111111132 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,8 +211,15 @@
 			isa = PBXGroup;
 			children = (
 				11111111111111111111111D /* AuthService.swift */,
+				11111111111111111111112C /* LoginView.swift */,
 				11111111111111111111111E /* LoginViewModel.swift */,
 				11111111111111111111111F /* LoginViewController.swift */,
+				11111111111111111111112D /* RegisterView.swift */,
+				11111111111111111111112F /* RegisterViewModel.swift */,
+				111111111111111111111131 /* RegisterViewController.swift */,
+				11111111111111111111112E /* ForgotPasswordView.swift */,
+				111111111111111111111130 /* ForgotPasswordViewModel.swift */,
+				111111111111111111111132 /* ForgotPasswordViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -250,6 +273,7 @@
 				111111111111111111111123 /* CredentialValidatorTests.swift */,
 				111111111111111111111124 /* LoginViewModelTests.swift */,
 				111111111111111111111129 /* APIClientTests.swift */,
+				11111111111111111111112B /* RemoteAuthServiceTests.swift */,
 			);
 			path = PJCiOSAppTests;
 			sourceTree = "<group>";
@@ -389,8 +413,15 @@
 				01111111111111111111111B /* CredentialValidator.swift in Sources */,
 				01111111111111111111111C /* PrimaryButton.swift in Sources */,
 				01111111111111111111111D /* AuthService.swift in Sources */,
+				01111111111111111111112C /* LoginView.swift in Sources */,
 				01111111111111111111111E /* LoginViewModel.swift in Sources */,
 				01111111111111111111111F /* LoginViewController.swift in Sources */,
+				01111111111111111111112D /* RegisterView.swift in Sources */,
+				01111111111111111111112F /* RegisterViewModel.swift in Sources */,
+				011111111111111111111131 /* RegisterViewController.swift in Sources */,
+				01111111111111111111112E /* ForgotPasswordView.swift in Sources */,
+				011111111111111111111130 /* ForgotPasswordViewModel.swift in Sources */,
+				011111111111111111111132 /* ForgotPasswordViewController.swift in Sources */,
 				011111111111111111111120 /* HomeViewModel.swift in Sources */,
 				011111111111111111111121 /* HomeViewController.swift in Sources */,
 				011111111111111111111127 /* RemoteImageView.swift in Sources */,
@@ -405,6 +436,7 @@
 				011111111111111111111123 /* CredentialValidatorTests.swift in Sources */,
 				011111111111111111111124 /* LoginViewModelTests.swift in Sources */,
 				011111111111111111111129 /* APIClientTests.swift in Sources */,
+				01111111111111111111112B /* RemoteAuthServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

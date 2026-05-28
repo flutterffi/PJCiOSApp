@@ -6,7 +6,7 @@ struct AppEnvironment {
     let sentryDSN: String?
 
     static let current = AppEnvironment(
-        network: .development,
+        network: .local,
         appName: "PJCiOSApp",
         sentryDSN: nil
     )

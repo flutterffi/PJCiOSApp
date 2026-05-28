@@ -22,7 +22,28 @@ final class AppCoordinator {
         viewController.onAuthenticated = { [weak self] session in
             self?.showHome(session: session)
         }
+        viewController.onRegisterRequested = { [weak self] in
+            self?.showRegister()
+        }
+        viewController.onForgotPasswordRequested = { [weak self] in
+            self?.showForgotPassword()
+        }
         navigationController.setViewControllers([viewController], animated: false)
+    }
+
+    private func showRegister() {
+        let viewModel = container.makeRegisterViewModel()
+        let viewController = RegisterViewController(viewModel: viewModel)
+        viewController.onRegistered = { [weak self] session in
+            self?.showHome(session: session)
+        }
+        navigationController.pushViewController(viewController, animated: true)
+    }
+
+    private func showForgotPassword() {
+        let viewModel = container.makeForgotPasswordViewModel()
+        let viewController = ForgotPasswordViewController(viewModel: viewModel)
+        navigationController.pushViewController(viewController, animated: true)
     }
 
     private func showHome(session: UserSession) {

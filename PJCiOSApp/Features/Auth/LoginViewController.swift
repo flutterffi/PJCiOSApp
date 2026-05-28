@@ -1,18 +1,13 @@
-import SnapKit
 import UIKit
 
 final class LoginViewController: UIViewController {
     var onAuthenticated: ((UserSession) -> Void)?
+    var onRegisterRequested: (() -> Void)?
+    var onForgotPasswordRequested: (() -> Void)?
 
     private let viewModel: LoginViewModel
+    private let loginView = LoginView()
     private var stateObservation: UUID?
-
-    private let stackView = UIStackView()
-    private let emailTextField = UITextField()
-    private let passwordTextField = UITextField()
-    private let loginButton = PrimaryButton(type: .system)
-    private let messageLabel = UILabel()
-    private let activityIndicator = UIActivityIndicatorView(style: .medium)
 
     init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
@@ -26,55 +21,22 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        configureFields()
-        configureLayout()
+        configureActions()
         bindViewModel()
+    }
+
+    override func loadView() {
+        view = loginView
     }
 
     private func configureView() {
         title = "Sign In"
-        view.backgroundColor = .systemBackground
     }
 
-    private func configureFields() {
-        emailTextField.placeholder = "Email"
-        emailTextField.textContentType = .username
-        emailTextField.keyboardType = .emailAddress
-        emailTextField.autocapitalizationType = .none
-        emailTextField.borderStyle = .roundedRect
-
-        passwordTextField.placeholder = "Password"
-        passwordTextField.textContentType = .password
-        passwordTextField.isSecureTextEntry = true
-        passwordTextField.borderStyle = .roundedRect
-
-        loginButton.setTitle("Sign In", for: .normal)
-        loginButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
-
-        messageLabel.numberOfLines = 0
-        messageLabel.font = .systemFont(ofSize: 14)
-        messageLabel.textColor = .secondaryLabel
-        messageLabel.textAlignment = .center
-    }
-
-    private func configureLayout() {
-        stackView.axis = .vertical
-        stackView.spacing = 16
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-
-        [emailTextField, passwordTextField, loginButton, activityIndicator, messageLabel].forEach(stackView.addArrangedSubview)
-        view.addSubview(stackView)
-
-        stackView.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(view.layoutMarginsGuide)
-            make.centerY.equalToSuperview()
-        }
-
-        [emailTextField, passwordTextField].forEach { textField in
-            textField.snp.makeConstraints { make in
-                make.height.equalTo(44)
-            }
-        }
+    private func configureActions() {
+        loginView.signInButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
+        loginView.registerButton.addTarget(self, action: #selector(registerTapped), for: .touchUpInside)
+        loginView.forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordTapped), for: .touchUpInside)
     }
 
     private func bindViewModel() {
@@ -86,26 +48,42 @@ final class LoginViewController: UIViewController {
     private func render(_ state: LoginViewModel.State) {
         switch state {
         case .idle:
-            loginButton.isEnabled = true
-            activityIndicator.stopAnimating()
-            messageLabel.text = "Use any valid email and a password with at least 6 characters."
+            setLoading(false)
+            loginView.messageLabel.text = "Use demo@pjcios.app and password for the local mock server."
         case .loading:
-            loginButton.isEnabled = false
-            activityIndicator.startAnimating()
-            messageLabel.text = "Signing in..."
+            setLoading(true)
+            loginView.messageLabel.text = "Signing in..."
         case .authenticated(let session):
-            loginButton.isEnabled = true
-            activityIndicator.stopAnimating()
+            setLoading(false)
             onAuthenticated?(session)
         case .failed(let message):
-            loginButton.isEnabled = true
-            activityIndicator.stopAnimating()
-            messageLabel.text = message
+            setLoading(false)
+            loginView.messageLabel.text = message
+        }
+    }
+
+    private func setLoading(_ isLoading: Bool) {
+        loginView.signInButton.isEnabled = !isLoading
+        loginView.registerButton.isEnabled = !isLoading
+        loginView.forgotPasswordButton.isEnabled = !isLoading
+
+        if isLoading {
+            loginView.activityIndicator.startAnimating()
+        } else {
+            loginView.activityIndicator.stopAnimating()
         }
     }
 
     @objc private func loginTapped() {
         view.endEditing(true)
-        viewModel.login(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
+        viewModel.login(email: loginView.emailTextField.text ?? "", password: loginView.passwordTextField.text ?? "")
+    }
+
+    @objc private func registerTapped() {
+        onRegisterRequested?()
+    }
+
+    @objc private func forgotPasswordTapped() {
+        onForgotPasswordRequested?()
     }
 }

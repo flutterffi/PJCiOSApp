@@ -6,6 +6,10 @@ protocol KeyValueStoring {
     func removeValue(forKey key: String)
 }
 
+enum StoreKey {
+    static let authToken = "auth.token"
+}
+
 final class UserDefaultsStore: KeyValueStoring {
     private let defaults: UserDefaults
 
@@ -28,6 +32,6 @@ final class UserDefaultsStore: KeyValueStoring {
 
 extension UserDefaultsStore: AuthorizationTokenProviding {
     var authorizationToken: String? {
-        string(forKey: "auth.token")
+        string(forKey: StoreKey.authToken)
     }
 }

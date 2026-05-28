@@ -17,11 +17,19 @@ final class AppContainer {
             tokenProvider: keyValueStore,
             logger: logger
         )
-        self.authService = DemoAuthService()
+        self.authService = RemoteAuthService(apiClient: apiClient, tokenStore: keyValueStore)
     }
 
     func makeLoginViewModel() -> LoginViewModel {
         LoginViewModel(authService: authService, validator: CredentialValidator(), logger: logger)
+    }
+
+    func makeRegisterViewModel() -> RegisterViewModel {
+        RegisterViewModel(authService: authService, validator: CredentialValidator(), logger: logger)
+    }
+
+    func makeForgotPasswordViewModel() -> ForgotPasswordViewModel {
+        ForgotPasswordViewModel(authService: authService, logger: logger)
     }
 
     func makeHomeViewModel(session: UserSession) -> HomeViewModel {
