@@ -1,5 +1,5 @@
-import XCTest
 @testable import PJCiOSApp
+import XCTest
 
 final class CredentialValidatorTests: XCTestCase {
     func testValidCredentialsPassValidation() {

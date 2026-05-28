@@ -67,7 +67,8 @@ final class RemoteAuthService: AuthServicing {
     }
 
     func login(email: String, password: String, completion: @escaping (Result<UserSession, AuthError>) -> Void) {
-        apiClient.request(AuthEndpoint.login(email: email, password: password)) { [tokenStore] (result: Result<LoginResponse, NetworkError>) in
+        let endpoint = AuthEndpoint.login(email: email, password: password)
+        apiClient.request(endpoint) { [tokenStore] (result: Result<LoginResponse, NetworkError>) in
             switch result {
             case .success(let response):
                 tokenStore.set(response.token, forKey: StoreKey.authToken)
@@ -84,9 +85,8 @@ final class RemoteAuthService: AuthServicing {
         password: String,
         completion: @escaping (Result<UserSession, AuthError>) -> Void
     ) {
-        apiClient.request(AuthEndpoint.register(name: name, email: email, password: password)) { [tokenStore] (
-            result: Result<LoginResponse, NetworkError>
-        ) in
+        let endpoint = AuthEndpoint.register(name: name, email: email, password: password)
+        apiClient.request(endpoint) { [tokenStore] (result: Result<LoginResponse, NetworkError>) in
             switch result {
             case .success(let response):
                 tokenStore.set(response.token, forKey: StoreKey.authToken)

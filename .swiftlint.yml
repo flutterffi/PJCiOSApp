@@ -2,6 +2,8 @@ included:
   - PJCiOSApp
   - PJCiOSAppTests
 
+cache_path: .build/swiftlint-cache
+
 excluded:
   - .build
   - PJCiOSApp.xcodeproj

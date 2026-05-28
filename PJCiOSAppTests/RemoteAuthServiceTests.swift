@@ -1,5 +1,5 @@
-import XCTest
 @testable import PJCiOSApp
+import XCTest
 
 final class RemoteAuthServiceTests: XCTestCase {
     func testLoginStoresTokenAndReturnsSession() {
@@ -67,7 +67,7 @@ final class RemoteAuthServiceTests: XCTestCase {
 }
 
 private enum LoginResponseFixture {
-    static let successData = """
+    static let successData = Data("""
     {
       "token": "mock-token-123",
       "user": {
@@ -77,9 +77,9 @@ private enum LoginResponseFixture {
         "avatarURL": "https://dummyjson.com/icon/emilys/128"
       }
     }
-    """.data(using: .utf8)!
+    """.utf8)
 
-    static let registerData = """
+    static let registerData = Data("""
     {
       "token": "mock-token-registered-123",
       "user": {
@@ -89,13 +89,13 @@ private enum LoginResponseFixture {
         "avatarURL": "https://dummyjson.com/icon/emilys/128"
       }
     }
-    """.data(using: .utf8)!
+    """.utf8)
 
-    static let passwordResetData = """
+    static let passwordResetData = Data("""
     {
       "message": "Password reset instructions were sent to demo@pjcios.app."
     }
-    """.data(using: .utf8)!
+    """.utf8)
 }
 
 private final class APIClientSpy: APIClienting {

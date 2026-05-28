@@ -1,5 +1,5 @@
-import UIKit
 import Sentry
+import UIKit
 
 @main
 final class AppDelegate: UIResponder, UIApplicationDelegate {
