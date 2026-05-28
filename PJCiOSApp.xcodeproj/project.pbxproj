@@ -210,27 +210,91 @@
 		06666666666666666666666B /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				11111111111111111111111D /* AuthService.swift */,
-				11111111111111111111112C /* LoginView.swift */,
-				11111111111111111111111E /* LoginViewModel.swift */,
-				11111111111111111111111F /* LoginViewController.swift */,
-				11111111111111111111112D /* RegisterView.swift */,
-				11111111111111111111112F /* RegisterViewModel.swift */,
-				111111111111111111111131 /* RegisterViewController.swift */,
-				11111111111111111111112E /* ForgotPasswordView.swift */,
-				111111111111111111111130 /* ForgotPasswordViewModel.swift */,
-				111111111111111111111132 /* ForgotPasswordViewController.swift */,
+				066666666666666666666690 /* Model */,
+				066666666666666666666691 /* View */,
+				066666666666666666666692 /* Controller */,
+				066666666666666666666693 /* ViewModel */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		066666666666666666666690 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11111111111111111111111D /* AuthService.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		066666666666666666666691 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				11111111111111111111112C /* LoginView.swift */,
+				11111111111111111111112D /* RegisterView.swift */,
+				11111111111111111111112E /* ForgotPasswordView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		066666666666666666666692 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				11111111111111111111111F /* LoginViewController.swift */,
+				111111111111111111111131 /* RegisterViewController.swift */,
+				111111111111111111111132 /* ForgotPasswordViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		066666666666666666666693 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				11111111111111111111111E /* LoginViewModel.swift */,
+				11111111111111111111112F /* RegisterViewModel.swift */,
+				111111111111111111111130 /* ForgotPasswordViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		06666666666666666666666C /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				111111111111111111111120 /* HomeViewModel.swift */,
-				111111111111111111111121 /* HomeViewController.swift */,
+				066666666666666666666694 /* Model */,
+				066666666666666666666695 /* View */,
+				066666666666666666666696 /* Controller */,
+				066666666666666666666697 /* ViewModel */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		066666666666666666666694 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		066666666666666666666695 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		066666666666666666666696 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				111111111111111111111121 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		066666666666666666666697 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				111111111111111111111120 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		06666666666666666666666D /* Shared */ = {
