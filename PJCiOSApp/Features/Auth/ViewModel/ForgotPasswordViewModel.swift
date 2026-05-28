@@ -1,6 +1,5 @@
 import Foundation
 
-@MainActor
 final class ForgotPasswordViewModel {
     enum State: Equatable {
         case idle
@@ -28,7 +27,7 @@ final class ForgotPasswordViewModel {
 
         state.value = .loading
         authService.requestPasswordReset(email: trimmedEmail) { [weak self] result in
-            Task { @MainActor in
+            DispatchQueue.main.async {
                 switch result {
                 case .success(let message):
                     self?.logger.info("Password reset requested.")

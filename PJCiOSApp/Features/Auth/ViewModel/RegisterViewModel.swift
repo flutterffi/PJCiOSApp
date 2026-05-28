@@ -1,6 +1,5 @@
 import Foundation
 
-@MainActor
 final class RegisterViewModel {
     enum State: Equatable {
         case idle
@@ -38,7 +37,7 @@ final class RegisterViewModel {
 
         state.value = .loading
         authService.register(name: trimmedName, email: email, password: password) { [weak self] result in
-            Task { @MainActor in
+            DispatchQueue.main.async {
                 switch result {
                 case .success(let session):
                     self?.logger.info("User registered: \(session.userID)")

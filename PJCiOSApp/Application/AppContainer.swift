@@ -20,17 +20,14 @@ final class AppContainer {
         self.authService = RemoteAuthService(apiClient: apiClient, tokenStore: keyValueStore)
     }
 
-    @MainActor
     func makeLoginViewModel() -> LoginViewModel {
         LoginViewModel(authService: authService, validator: CredentialValidator(), logger: logger)
     }
 
-    @MainActor
     func makeRegisterViewModel() -> RegisterViewModel {
         RegisterViewModel(authService: authService, validator: CredentialValidator(), logger: logger)
     }
 
-    @MainActor
     func makeForgotPasswordViewModel() -> ForgotPasswordViewModel {
         ForgotPasswordViewModel(authService: authService, logger: logger)
     }

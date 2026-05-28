@@ -2,10 +2,7 @@ import Alamofire
 import Foundation
 
 protocol APIClienting {
-    func request<T: Decodable & Sendable>(
-        _ endpoint: APIEndpoint,
-        completion: @Sendable @escaping (Result<T, NetworkError>) -> Void
-    )
+    func request<T: Decodable>(_ endpoint: APIEndpoint, completion: @escaping (Result<T, NetworkError>) -> Void)
 }
 
 final class AlamofireAPIClient: APIClienting {
@@ -32,10 +29,7 @@ final class AlamofireAPIClient: APIClienting {
         self.logger = logger
     }
 
-    func request<T: Decodable & Sendable>(
-        _ endpoint: APIEndpoint,
-        completion: @Sendable @escaping (Result<T, NetworkError>) -> Void
-    ) {
+    func request<T: Decodable>(_ endpoint: APIEndpoint, completion: @escaping (Result<T, NetworkError>) -> Void) {
         let request: URLRequest
 
         do {
@@ -44,7 +38,7 @@ final class AlamofireAPIClient: APIClienting {
             completion(.failure(error))
             return
         } catch {
-            completion(.failure(.requestEncoding(error.localizedDescription)))
+            completion(.failure(.requestEncoding(error)))
             return
         }
 

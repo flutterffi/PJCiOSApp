@@ -1,7 +1,6 @@
 @testable import PJCiOSApp
 import XCTest
 
-@MainActor
 final class LoginViewModelTests: XCTestCase {
     func testInvalidCredentialsPublishFailure() {
         let viewModel = LoginViewModel(
@@ -36,7 +35,6 @@ final class LoginViewModelTests: XCTestCase {
     }
 }
 
-@MainActor
 final class RegisterViewModelTests: XCTestCase {
     func testMissingNamePublishesFailure() {
         let viewModel = RegisterViewModel(
@@ -71,7 +69,6 @@ final class RegisterViewModelTests: XCTestCase {
     }
 }
 
-@MainActor
 final class ForgotPasswordViewModelTests: XCTestCase {
     func testInvalidEmailPublishesFailure() {
         let viewModel = ForgotPasswordViewModel(
@@ -107,7 +104,7 @@ final class ForgotPasswordViewModelTests: XCTestCase {
     }
 }
 
-private final class AuthServiceSpy: AuthServicing, @unchecked Sendable {
+private final class AuthServiceSpy: AuthServicing {
     private let result: Result<UserSession, AuthError>
     private let resetResult: Result<String, AuthError>
 
@@ -119,11 +116,7 @@ private final class AuthServiceSpy: AuthServicing, @unchecked Sendable {
         self.resetResult = resetResult
     }
 
-    func login(
-        email: String,
-        password: String,
-        completion: @Sendable @escaping (Result<UserSession, AuthError>) -> Void
-    ) {
+    func login(email: String, password: String, completion: @escaping (Result<UserSession, AuthError>) -> Void) {
         completion(result)
     }
 
@@ -131,15 +124,12 @@ private final class AuthServiceSpy: AuthServicing, @unchecked Sendable {
         name: String,
         email: String,
         password: String,
-        completion: @Sendable @escaping (Result<UserSession, AuthError>) -> Void
+        completion: @escaping (Result<UserSession, AuthError>) -> Void
     ) {
         completion(result)
     }
 
-    func requestPasswordReset(
-        email: String,
-        completion: @Sendable @escaping (Result<String, AuthError>) -> Void
-    ) {
+    func requestPasswordReset(email: String, completion: @escaping (Result<String, AuthError>) -> Void) {
         completion(resetResult)
     }
 }

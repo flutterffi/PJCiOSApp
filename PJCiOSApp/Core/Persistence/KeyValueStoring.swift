@@ -1,6 +1,6 @@
 import Foundation
 
-protocol KeyValueStoring: Sendable {
+protocol KeyValueStoring {
     func string(forKey key: String) -> String?
     func set(_ value: String?, forKey key: String)
     func removeValue(forKey key: String)
@@ -10,7 +10,7 @@ enum StoreKey {
     static let authToken = "auth.token"
 }
 
-final class UserDefaultsStore: KeyValueStoring, @unchecked Sendable {
+final class UserDefaultsStore: KeyValueStoring {
     private let defaults: UserDefaults
 
     init(defaults: UserDefaults = .standard) {

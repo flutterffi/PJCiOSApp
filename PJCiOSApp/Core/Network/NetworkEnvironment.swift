@@ -1,13 +1,13 @@
 import Foundation
 
-enum NetworkEnvironmentName: String, Sendable {
+enum NetworkEnvironmentName: String {
     case local
     case development
     case staging
     case production
 }
 
-struct NetworkEnvironment: Equatable, Sendable {
+struct NetworkEnvironment: Equatable {
     let name: NetworkEnvironmentName
     let baseURL: URL
     let defaultHeaders: [String: String]
@@ -65,6 +65,6 @@ struct NetworkEnvironment: Equatable, Sendable {
     ]
 }
 
-protocol AuthorizationTokenProviding: Sendable {
+protocol AuthorizationTokenProviding {
     var authorizationToken: String? { get }
 }
