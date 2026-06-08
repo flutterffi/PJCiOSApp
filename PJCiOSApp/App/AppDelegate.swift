@@ -27,10 +27,11 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         }
 
+        let sentryEnvironment = container.environment.network.name.rawValue
         SentrySDK.start { options in
             options.dsn = dsn
             options.tracesSampleRate = 0.2
-            options.environment = "development"
+            options.environment = sentryEnvironment
         }
     }
 }
