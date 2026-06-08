@@ -10,7 +10,7 @@ final class AppContainer {
     init(environment: AppEnvironment) {
         self.environment = environment
         self.logger = AppLogger(subsystem: "com.flutterffi.PJCiOSApp")
-        let keyValueStore = UserDefaultsStore()
+        let keyValueStore = KeychainStore()
         self.keyValueStore = keyValueStore
         self.apiClient = AlamofireAPIClient(
             environment: environment.network,
