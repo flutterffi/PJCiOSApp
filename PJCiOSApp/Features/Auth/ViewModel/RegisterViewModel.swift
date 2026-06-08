@@ -24,7 +24,7 @@ final class RegisterViewModel {
     func register(name: String, email: String, password: String) {
         let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmedName.isEmpty else {
-            state.value = .failed("Please enter your name.")
+            state.value = .failed(L10n.Validation.missingName)
             return
         }
 

@@ -22,7 +22,7 @@ final class ForgotPasswordViewModel {
     func requestReset(email: String) {
         let trimmedEmail = email.trimmingCharacters(in: .whitespacesAndNewlines)
         guard trimmedEmail.contains("@"), trimmedEmail.contains(".") else {
-            state.value = .failed("Please enter a valid email address.")
+            state.value = .failed(L10n.Validation.invalidEmail)
             return
         }
 

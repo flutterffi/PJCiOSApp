@@ -9,6 +9,7 @@ Use the shared design system for all UI constants.
 - `AppLayout`: safe-area-aware layout helpers, screen ratio values, and design-size scaling.
 - `AppNavigationStyle`: centralized navigation bar styling.
 - `AppTextFieldStyle`: shared text field styling.
+- `L10n`: typed accessors for localized strings generated from `Localizable.strings`.
 
 Design handoff should map design tokens into these files before feature screens are implemented.
 
@@ -17,3 +18,6 @@ Default design-size scaling uses a 375 x 812 baseline. Use `AppLayout.scaleWidth
 
 Use semantic colors first. For design handoff values, `AppColor.rgb(_:_:_:alpha:)` accepts
 0-255 RGB channels and `AppColor.hex(_:)` accepts `#RGB`, `#ARGB`, `#RRGGBB`, and `#AARRGGBB`.
+
+Keep user-visible text in `PJCiOSApp/Resources/en.lproj/Localizable.strings` and reference it
+through `L10n` instead of hard-coded view/controller strings.

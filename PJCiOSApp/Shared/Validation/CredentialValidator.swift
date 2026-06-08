@@ -23,9 +23,9 @@ enum ValidationError: LocalizedError, Equatable {
     var errorDescription: String? {
         switch self {
         case .invalidEmail:
-            return "Please enter a valid email address."
+            return L10n.Validation.invalidEmail
         case .weakPassword:
-            return "Password must be at least 6 characters."
+            return L10n.Validation.weakPassword
         }
     }
 }

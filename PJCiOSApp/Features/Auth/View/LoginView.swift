@@ -23,20 +23,20 @@ final class LoginView: UIView {
     private func configure() {
         backgroundColor = AppColor.background
 
-        emailTextField.placeholder = "Email"
+        emailTextField.placeholder = L10n.Auth.emailPlaceholder
         emailTextField.textContentType = .username
         emailTextField.keyboardType = .emailAddress
         emailTextField.autocapitalizationType = .none
         AppTextFieldStyle.apply(to: emailTextField)
 
-        passwordTextField.placeholder = "Password"
+        passwordTextField.placeholder = L10n.Auth.passwordPlaceholder
         passwordTextField.textContentType = .password
         passwordTextField.isSecureTextEntry = true
         AppTextFieldStyle.apply(to: passwordTextField)
 
-        signInButton.setTitle("Sign In", for: .normal)
-        registerButton.setTitle("Create Account", for: .normal)
-        forgotPasswordButton.setTitle("Forgot Password", for: .normal)
+        signInButton.setTitle(L10n.Auth.signIn, for: .normal)
+        registerButton.setTitle(L10n.Auth.createAccount, for: .normal)
+        forgotPasswordButton.setTitle(L10n.Auth.forgotPassword, for: .normal)
 
         messageLabel.numberOfLines = 0
         messageLabel.font = AppFont.footnote

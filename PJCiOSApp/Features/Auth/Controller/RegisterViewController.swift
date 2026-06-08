@@ -22,7 +22,7 @@ final class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Create Account"
+        title = L10n.Auth.createAccount
         registerView.registerButton.addTarget(self, action: #selector(registerTapped), for: .touchUpInside)
         bindViewModel()
     }
@@ -37,10 +37,10 @@ final class RegisterViewController: UIViewController {
         switch state {
         case .idle:
             setLoading(false)
-            registerView.messageLabel.text = "Create a local mock account."
+            registerView.messageLabel.text = L10n.Auth.registerHint
         case .loading:
             setLoading(true)
-            registerView.messageLabel.text = "Creating account..."
+            registerView.messageLabel.text = L10n.Auth.registerLoading
         case .registered(let session):
             setLoading(false)
             onRegistered?(session)

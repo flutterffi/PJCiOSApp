@@ -6,3 +6,11 @@ xcassets:
       output: PJCiOSApp/Shared/Resources/Generated/Assets+Generated.swift
       params:
         enumName: AppAsset
+strings:
+  inputs:
+    - PJCiOSApp/Resources/en.lproj/Localizable.strings
+  outputs:
+    - templateName: structured-swift5
+      output: PJCiOSApp/Shared/Resources/Generated/Strings+Generated.swift
+      params:
+        enumName: L10n

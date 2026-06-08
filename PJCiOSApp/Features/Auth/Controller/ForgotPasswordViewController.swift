@@ -20,7 +20,7 @@ final class ForgotPasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Reset Password"
+        title = L10n.Auth.resetPassword
         forgotPasswordView.submitButton.addTarget(self, action: #selector(submitTapped), for: .touchUpInside)
         bindViewModel()
     }
@@ -35,10 +35,10 @@ final class ForgotPasswordViewController: UIViewController {
         switch state {
         case .idle:
             setLoading(false)
-            forgotPasswordView.messageLabel.text = "Enter your email to receive reset instructions."
+            forgotPasswordView.messageLabel.text = L10n.Auth.forgotPasswordHint
         case .loading:
             setLoading(true)
-            forgotPasswordView.messageLabel.text = "Sending reset instructions..."
+            forgotPasswordView.messageLabel.text = L10n.Auth.forgotPasswordLoading
         case .sent(let message):
             setLoading(false)
             forgotPasswordView.messageLabel.text = message

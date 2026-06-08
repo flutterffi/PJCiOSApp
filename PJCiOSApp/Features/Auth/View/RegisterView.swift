@@ -22,22 +22,22 @@ final class RegisterView: UIView {
     private func configure() {
         backgroundColor = AppColor.background
 
-        nameTextField.placeholder = "Name"
+        nameTextField.placeholder = L10n.Auth.namePlaceholder
         nameTextField.textContentType = .name
         AppTextFieldStyle.apply(to: nameTextField)
 
-        emailTextField.placeholder = "Email"
+        emailTextField.placeholder = L10n.Auth.emailPlaceholder
         emailTextField.textContentType = .emailAddress
         emailTextField.keyboardType = .emailAddress
         emailTextField.autocapitalizationType = .none
         AppTextFieldStyle.apply(to: emailTextField)
 
-        passwordTextField.placeholder = "Password"
+        passwordTextField.placeholder = L10n.Auth.passwordPlaceholder
         passwordTextField.textContentType = .newPassword
         passwordTextField.isSecureTextEntry = true
         AppTextFieldStyle.apply(to: passwordTextField)
 
-        registerButton.setTitle("Create Account", for: .normal)
+        registerButton.setTitle(L10n.Auth.createAccount, for: .normal)
 
         messageLabel.numberOfLines = 0
         messageLabel.font = AppFont.footnote

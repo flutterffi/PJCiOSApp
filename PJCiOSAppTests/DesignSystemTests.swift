@@ -23,6 +23,12 @@ final class DesignSystemTests: XCTestCase {
         XCTAssertNil(AppColor.hex("invalid"))
     }
 
+    func testLocalizedStringsUseGeneratedAccessors() {
+        XCTAssertEqual(L10n.Auth.signIn, "Sign In")
+        XCTAssertEqual(L10n.Home.welcome("Taylor"), "Welcome, Taylor")
+        XCTAssertEqual(L10n.Auth.passwordResetSent("user@example.com"), "Password reset instructions were sent to user@example.com.")
+    }
+
     private func assertColor(
         _ color: UIColor?,
         red expectedRed: CGFloat,

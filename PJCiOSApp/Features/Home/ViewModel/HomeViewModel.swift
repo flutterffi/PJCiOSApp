@@ -10,8 +10,8 @@ final class HomeViewModel {
 
     init(session: UserSession, appName: String) {
         self.state = HomeViewState(
-            title: "Welcome, \(session.displayName)",
-            subtitle: "\(appName) is running on a UIKit MVVM foundation."
+            title: L10n.Home.welcome(session.displayName),
+            subtitle: L10n.Home.subtitle(appName)
         )
     }
 }

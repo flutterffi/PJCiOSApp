@@ -23,7 +23,7 @@ final class HomeViewController: UIViewController {
     }
 
     private func configureView() {
-        title = "Home"
+        title = L10n.Home.title
         view.backgroundColor = AppColor.background
         titleLabel.font = AppFont.title
         titleLabel.textColor = AppColor.textPrimary

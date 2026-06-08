@@ -30,7 +30,7 @@ final class LoginViewController: UIViewController {
     }
 
     private func configureView() {
-        title = "Sign In"
+        title = L10n.Auth.signIn
     }
 
     private func configureActions() {
@@ -49,10 +49,10 @@ final class LoginViewController: UIViewController {
         switch state {
         case .idle:
             setLoading(false)
-            loginView.messageLabel.text = "Use demo@pjcios.app and password for the local mock server."
+            loginView.messageLabel.text = L10n.Auth.loginHint
         case .loading:
             setLoading(true)
-            loginView.messageLabel.text = "Signing in..."
+            loginView.messageLabel.text = L10n.Auth.loginLoading
         case .authenticated(let session):
             setLoading(false)
             onAuthenticated?(session)

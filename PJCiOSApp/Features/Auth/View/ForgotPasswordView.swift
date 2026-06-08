@@ -20,13 +20,13 @@ final class ForgotPasswordView: UIView {
     private func configure() {
         backgroundColor = AppColor.background
 
-        emailTextField.placeholder = "Email"
+        emailTextField.placeholder = L10n.Auth.emailPlaceholder
         emailTextField.textContentType = .emailAddress
         emailTextField.keyboardType = .emailAddress
         emailTextField.autocapitalizationType = .none
         AppTextFieldStyle.apply(to: emailTextField)
 
-        submitButton.setTitle("Send Reset Link", for: .normal)
+        submitButton.setTitle(L10n.Auth.sendResetLink, for: .normal)
 
         messageLabel.numberOfLines = 0
         messageLabel.font = AppFont.footnote

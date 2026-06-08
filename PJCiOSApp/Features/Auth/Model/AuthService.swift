@@ -33,7 +33,7 @@ enum AuthError: LocalizedError, Equatable, Sendable {
     var errorDescription: String? {
         switch self {
         case .invalidCredentials:
-            return "Email or password is incorrect."
+            return L10n.Auth.invalidCredentials
         case .network(let message):
             return message
         }
@@ -68,7 +68,7 @@ final class DemoAuthService: AuthServicing {
         completion: @Sendable @escaping (Result<String, AuthError>) -> Void
     ) {
         DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + 0.35) {
-            completion(.success("Password reset instructions were sent to \(email)."))
+            completion(.success(L10n.Auth.passwordResetSent(email)))
         }
     }
 }
