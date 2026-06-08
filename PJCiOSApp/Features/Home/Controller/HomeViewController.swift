@@ -1,10 +1,10 @@
-import SnapKit
 import UIKit
 
 final class HomeViewController: UIViewController {
+    var onSignedOut: (() -> Void)?
+
     private let viewModel: HomeViewModel
-    private let titleLabel = UILabel()
-    private let subtitleLabel = UILabel()
+    private let homeView = HomeView()
 
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
@@ -18,33 +18,24 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        configureLayout()
         render()
+    }
+
+    override func loadView() {
+        view = homeView
     }
 
     private func configureView() {
         title = L10n.Home.title
-        view.backgroundColor = AppColor.background
-        titleLabel.font = AppFont.title
-        titleLabel.textColor = AppColor.textPrimary
-        titleLabel.numberOfLines = 0
-        subtitleLabel.font = AppFont.body
-        subtitleLabel.textColor = AppColor.textSecondary
-        subtitleLabel.numberOfLines = 0
-    }
-
-    private func configureLayout() {
-        let stackView = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
-        stackView.axis = .vertical
-        stackView.spacing = AppSpacing.medium
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(stackView)
-
-        AppLayout.pinReadableStack(stackView, in: view)
+        homeView.signOutButton.addTarget(self, action: #selector(signOutTapped), for: .touchUpInside)
     }
 
     private func render() {
-        titleLabel.text = viewModel.state.title
-        subtitleLabel.text = viewModel.state.subtitle
+        homeView.render(viewModel.state)
+    }
+
+    @objc private func signOutTapped() {
+        viewModel.signOut()
+        onSignedOut?()
     }
 }

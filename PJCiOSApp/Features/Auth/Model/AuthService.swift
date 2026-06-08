@@ -24,6 +24,8 @@ protocol AuthServicing {
         email: String,
         completion: @Sendable @escaping (Result<String, AuthError>) -> Void
     )
+
+    func signOut()
 }
 
 enum AuthError: LocalizedError, Equatable, Sendable {
@@ -71,6 +73,8 @@ final class DemoAuthService: AuthServicing {
             completion(.success(L10n.Auth.passwordResetSent(email)))
         }
     }
+
+    func signOut() {}
 }
 
 final class RemoteAuthService: AuthServicing {
@@ -129,6 +133,10 @@ final class RemoteAuthService: AuthServicing {
                 completion(.failure(.network(error.localizedDescription)))
             }
         }
+    }
+
+    func signOut() {
+        tokenStore.removeValue(forKey: StoreKey.authToken)
     }
 }
 

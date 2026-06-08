@@ -51,6 +51,9 @@ final class AppCoordinator {
     private func showHome(session: UserSession) {
         let viewModel = container.makeHomeViewModel(session: session)
         let viewController = HomeViewController(viewModel: viewModel)
+        viewController.onSignedOut = { [weak self] in
+            self?.showLogin()
+        }
         navigationController.setViewControllers([viewController], animated: true)
     }
 }

@@ -64,6 +64,16 @@ final class RemoteAuthServiceTests: XCTestCase {
 
         wait(for: [expectation], timeout: 1.0)
     }
+
+    func testSignOutRemovesStoredToken() {
+        let tokenStore = KeyValueStoreSpy()
+        tokenStore.set("token-123", forKey: StoreKey.authToken)
+        let service = RemoteAuthService(apiClient: APIClientSpy(response: Data()), tokenStore: tokenStore)
+
+        service.signOut()
+
+        XCTAssertNil(tokenStore.values[StoreKey.authToken])
+    }
 }
 
 private enum LoginResponseFixture {

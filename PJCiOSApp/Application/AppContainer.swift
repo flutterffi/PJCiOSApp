@@ -36,6 +36,6 @@ final class AppContainer {
     }
 
     func makeHomeViewModel(session: UserSession) -> HomeViewModel {
-        HomeViewModel(session: session, appName: environment.appName)
+        HomeViewModel(session: session, appName: environment.appName, authService: authService)
     }
 }

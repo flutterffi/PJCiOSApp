@@ -47,6 +47,8 @@ internal enum L10n {
     internal static let signIn = L10n.tr("Localizable", "auth.sign_in", fallback: "Sign In")
   }
   internal enum Home {
+    /// Sign Out
+    internal static let signOut = L10n.tr("Localizable", "home.sign_out", fallback: "Sign Out")
     /// %@ is running on a UIKit MVVM foundation.
     internal static func subtitle(_ p1: Any) -> String {
       return L10n.tr("Localizable", "home.subtitle", String(describing: p1), fallback: "%@ is running on a UIKit MVVM foundation.")

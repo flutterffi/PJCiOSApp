@@ -16,6 +16,7 @@
 "auth.password_reset_sent" = "Password reset instructions were sent to %@.";
 "home.title" = "Home";
 "home.subtitle" = "%@ is running on a UIKit MVVM foundation.";
+"home.sign_out" = "Sign Out";
 "home.welcome" = "Welcome, %@";
 "validation.invalid_email" = "Please enter a valid email address.";
 "validation.missing_name" = "Please enter your name.";

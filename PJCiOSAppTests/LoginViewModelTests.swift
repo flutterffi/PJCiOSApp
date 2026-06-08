@@ -107,9 +107,26 @@ final class ForgotPasswordViewModelTests: XCTestCase {
     }
 }
 
+@MainActor
+final class HomeViewModelTests: XCTestCase {
+    func testSignOutDelegatesToAuthService() {
+        let authService = AuthServiceSpy(result: .success(UserSession(userID: "1", displayName: "User", token: "token")))
+        let viewModel = HomeViewModel(
+            session: UserSession(userID: "1", displayName: "User", token: "token"),
+            appName: "PJCiOSApp",
+            authService: authService
+        )
+
+        viewModel.signOut()
+
+        XCTAssertTrue(authService.didSignOut)
+    }
+}
+
 private final class AuthServiceSpy: AuthServicing, @unchecked Sendable {
     private let result: Result<UserSession, AuthError>
     private let resetResult: Result<String, AuthError>
+    private(set) var didSignOut = false
 
     init(
         result: Result<UserSession, AuthError>,
@@ -141,6 +158,10 @@ private final class AuthServiceSpy: AuthServicing, @unchecked Sendable {
         completion: @Sendable @escaping (Result<String, AuthError>) -> Void
     ) {
         completion(resetResult)
+    }
+
+    func signOut() {
+        didSignOut = true
     }
 }
 

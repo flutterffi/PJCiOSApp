@@ -25,6 +25,7 @@ final class DesignSystemTests: XCTestCase {
 
     func testLocalizedStringsUseGeneratedAccessors() {
         XCTAssertEqual(L10n.Auth.signIn, "Sign In")
+        XCTAssertEqual(L10n.Home.signOut, "Sign Out")
         XCTAssertEqual(L10n.Home.welcome("Taylor"), "Welcome, Taylor")
         XCTAssertEqual(L10n.Auth.passwordResetSent("user@example.com"), "Password reset instructions were sent to user@example.com.")
     }
