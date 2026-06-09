@@ -34,27 +34,13 @@ final class ForgotPasswordViewController: UIViewController {
     private func render(_ state: ForgotPasswordViewModel.State) {
         switch state {
         case .idle:
-            setLoading(false)
-            forgotPasswordView.messageLabel.text = L10n.Auth.forgotPasswordHint
+            forgotPasswordView.renderFormState(isLoading: false, message: L10n.Auth.forgotPasswordHint)
         case .loading:
-            setLoading(true)
-            forgotPasswordView.messageLabel.text = L10n.Auth.forgotPasswordLoading
+            forgotPasswordView.renderFormState(isLoading: true, message: L10n.Auth.forgotPasswordLoading)
         case .sent(let message):
-            setLoading(false)
-            forgotPasswordView.messageLabel.text = message
+            forgotPasswordView.renderFormState(isLoading: false, message: message)
         case .failed(let message):
-            setLoading(false)
-            forgotPasswordView.messageLabel.text = message
-        }
-    }
-
-    private func setLoading(_ isLoading: Bool) {
-        forgotPasswordView.submitButton.isEnabled = !isLoading
-
-        if isLoading {
-            forgotPasswordView.activityIndicator.startAnimating()
-        } else {
-            forgotPasswordView.activityIndicator.stopAnimating()
+            forgotPasswordView.renderFormState(isLoading: false, message: message)
         }
     }
 

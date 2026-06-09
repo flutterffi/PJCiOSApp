@@ -48,29 +48,14 @@ final class LoginViewController: UIViewController {
     private func render(_ state: LoginViewModel.State) {
         switch state {
         case .idle:
-            setLoading(false)
-            loginView.messageLabel.text = L10n.Auth.loginHint
+            loginView.renderFormState(isLoading: false, message: L10n.Auth.loginHint)
         case .loading:
-            setLoading(true)
-            loginView.messageLabel.text = L10n.Auth.loginLoading
+            loginView.renderFormState(isLoading: true, message: L10n.Auth.loginLoading)
         case .authenticated(let session):
-            setLoading(false)
+            loginView.renderFormState(isLoading: false, message: "")
             onAuthenticated?(session)
         case .failed(let message):
-            setLoading(false)
-            loginView.messageLabel.text = message
-        }
-    }
-
-    private func setLoading(_ isLoading: Bool) {
-        loginView.signInButton.isEnabled = !isLoading
-        loginView.registerButton.isEnabled = !isLoading
-        loginView.forgotPasswordButton.isEnabled = !isLoading
-
-        if isLoading {
-            loginView.activityIndicator.startAnimating()
-        } else {
-            loginView.activityIndicator.stopAnimating()
+            loginView.renderFormState(isLoading: false, message: message)
         }
     }
 

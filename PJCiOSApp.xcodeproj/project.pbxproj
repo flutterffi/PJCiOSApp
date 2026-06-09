@@ -54,6 +54,7 @@
 		011111111111111111111141 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111141 /* KeychainStore.swift */; };
 		011111111111111111111142 /* KeychainStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111142 /* KeychainStoreTests.swift */; };
 		011111111111111111111143 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111143 /* HomeView.swift */; };
+		011111111111111111111144 /* FormStateRendering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111144 /* FormStateRendering.swift */; };
 		0D1111111111111111111111 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0E1111111111111111111111 /* Alamofire */; };
 		0D1111111111111111111112 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0E1111111111111111111112 /* Kingfisher */; };
 		0D1111111111111111111113 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0E1111111111111111111113 /* SnapKit */; };
@@ -118,6 +119,7 @@
 		11111111111111111111113F /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		111111111111111111111140 /* AppConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurationTests.swift; sourceTree = "<group>"; };
 		111111111111111111111141 /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
+		111111111111111111111144 /* FormStateRendering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStateRendering.swift; sourceTree = "<group>"; };
 		111111111111111111111142 /* KeychainStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStoreTests.swift; sourceTree = "<group>"; };
 		111111111111111111111143 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -377,6 +379,7 @@
 		06666666666666666666666E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				111111111111111111111144 /* FormStateRendering.swift */,
 				11111111111111111111111C /* PrimaryButton.swift */,
 				111111111111111111111127 /* RemoteImageView.swift */,
 			);
@@ -587,6 +590,7 @@
 				01111111111111111111113F /* AppConfiguration.swift in Sources */,
 				011111111111111111111141 /* KeychainStore.swift in Sources */,
 				011111111111111111111143 /* HomeView.swift in Sources */,
+				011111111111111111111144 /* FormStateRendering.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

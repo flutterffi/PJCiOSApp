@@ -50,3 +50,17 @@ final class ForgotPasswordView: UIView {
         }
     }
 }
+
+extension ForgotPasswordView: FormStateRendering {
+    var formControls: [UIControl] {
+        [submitButton]
+    }
+
+    var formMessageLabel: UILabel {
+        messageLabel
+    }
+
+    var formActivityIndicator: UIActivityIndicatorView {
+        activityIndicator
+    }
+}

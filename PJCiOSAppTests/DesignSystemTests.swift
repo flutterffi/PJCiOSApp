@@ -30,6 +30,27 @@ final class DesignSystemTests: XCTestCase {
         XCTAssertEqual(L10n.Auth.passwordResetSent("user@example.com"), "Password reset instructions were sent to user@example.com.")
     }
 
+    @MainActor
+    func testFormStateRenderingUpdatesControlsAndMessage() {
+        let view = LoginView()
+
+        view.renderFormState(isLoading: true, message: "Loading")
+
+        XCTAssertFalse(view.signInButton.isEnabled)
+        XCTAssertFalse(view.registerButton.isEnabled)
+        XCTAssertFalse(view.forgotPasswordButton.isEnabled)
+        XCTAssertEqual(view.messageLabel.text, "Loading")
+        XCTAssertTrue(view.activityIndicator.isAnimating)
+
+        view.renderFormState(isLoading: false, message: "Ready")
+
+        XCTAssertTrue(view.signInButton.isEnabled)
+        XCTAssertTrue(view.registerButton.isEnabled)
+        XCTAssertTrue(view.forgotPasswordButton.isEnabled)
+        XCTAssertEqual(view.messageLabel.text, "Ready")
+        XCTAssertFalse(view.activityIndicator.isAnimating)
+    }
+
     private func assertColor(
         _ color: UIColor?,
         red expectedRed: CGFloat,

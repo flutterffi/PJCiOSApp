@@ -65,3 +65,17 @@ final class LoginView: UIView {
         }
     }
 }
+
+extension LoginView: FormStateRendering {
+    var formControls: [UIControl] {
+        [signInButton, registerButton, forgotPasswordButton]
+    }
+
+    var formMessageLabel: UILabel {
+        messageLabel
+    }
+
+    var formActivityIndicator: UIActivityIndicatorView {
+        activityIndicator
+    }
+}

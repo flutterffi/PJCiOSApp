@@ -36,27 +36,14 @@ final class RegisterViewController: UIViewController {
     private func render(_ state: RegisterViewModel.State) {
         switch state {
         case .idle:
-            setLoading(false)
-            registerView.messageLabel.text = L10n.Auth.registerHint
+            registerView.renderFormState(isLoading: false, message: L10n.Auth.registerHint)
         case .loading:
-            setLoading(true)
-            registerView.messageLabel.text = L10n.Auth.registerLoading
+            registerView.renderFormState(isLoading: true, message: L10n.Auth.registerLoading)
         case .registered(let session):
-            setLoading(false)
+            registerView.renderFormState(isLoading: false, message: "")
             onRegistered?(session)
         case .failed(let message):
-            setLoading(false)
-            registerView.messageLabel.text = message
-        }
-    }
-
-    private func setLoading(_ isLoading: Bool) {
-        registerView.registerButton.isEnabled = !isLoading
-
-        if isLoading {
-            registerView.activityIndicator.startAnimating()
-        } else {
-            registerView.activityIndicator.stopAnimating()
+            registerView.renderFormState(isLoading: false, message: message)
         }
     }
 

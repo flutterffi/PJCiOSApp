@@ -65,3 +65,17 @@ final class RegisterView: UIView {
         }
     }
 }
+
+extension RegisterView: FormStateRendering {
+    var formControls: [UIControl] {
+        [registerButton]
+    }
+
+    var formMessageLabel: UILabel {
+        messageLabel
+    }
+
+    var formActivityIndicator: UIActivityIndicatorView {
+        activityIndicator
+    }
+}
